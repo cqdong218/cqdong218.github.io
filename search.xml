@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>信号与系统-1</title>
+      <link href="/2022/05/07/xin-hao-yu-xi-tong/"/>
+      <url>/2022/05/07/xin-hao-yu-xi-tong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h1><hr><h2 id="一、信号表示为三角傅里叶级数"><a href="#一、信号表示为三角傅里叶级数" class="headerlink" title="一、信号表示为三角傅里叶级数"></a>一、信号表示为三角傅里叶级数</h2><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108180.png"></p><blockquote><p><strong>三角级数的另一种表示</strong></p></blockquote><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108163.png"></p><blockquote><p>解释</p></blockquote><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108193.png"></p><blockquote><p><strong>信号展成傅里叶级数的条件</strong> ———狄利克雷条件</p></blockquote><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108161.png"></p><p>实际信号一般都能满足<strong>狄氏条件</strong></p><h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><blockquote><p><strong>把如图所示周期方波信号用三角傅里叶级数表示</strong></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108157.png"></p><p><strong>求系数</strong></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108168.png"></p><p><strong>取前面若干项的近似结果</strong></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108757.png"></p></blockquote><hr><h2 id="二、函数奇偶性及傅里叶级数"><a href="#二、函数奇偶性及傅里叶级数" class="headerlink" title="二、函数奇偶性及傅里叶级数"></a>二、函数奇偶性及傅里叶级数</h2><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108832.png"></p><h3 id="1-f-t-为偶函数"><a href="#1-f-t-为偶函数" class="headerlink" title="1.$f(t)$为偶函数"></a>1.$f(t)$为偶函数</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108794.png"></p><h3 id="2-f-t-为奇函数"><a href="#2-f-t-为奇函数" class="headerlink" title="2.$f(t)$为奇函数"></a>2.$f(t)$为奇函数</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108857.png"></p><h3 id="3-f-t-为偶谐函数"><a href="#3-f-t-为偶谐函数" class="headerlink" title="3.$f(t)$为偶谐函数"></a>3.$f(t)$为偶谐函数</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108874.png"></p><h3 id="4-f-t-为奇谐函数"><a href="#4-f-t-为奇谐函数" class="headerlink" title="4.$f(t)$为奇谐函数"></a>4.$f(t)$为奇谐函数</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108836.png"></p><hr><h2 id="三、信号表示为指数傅里叶级数"><a href="#三、信号表示为指数傅里叶级数" class="headerlink" title="三、信号表示为指数傅里叶级数"></a>三、信号表示为指数傅里叶级数</h2><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108235.png"></p><h2 id="四、三角傅里叶级数与指数傅里叶级数的关系"><a href="#四、三角傅里叶级数与指数傅里叶级数的关系" class="headerlink" title="四、三角傅里叶级数与指数傅里叶级数的关系"></a>四、三角傅里叶级数与指数傅里叶级数的关系</h2><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108339.png"></p><hr><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108539.png"></p><h3 id="五、信号的频谱"><a href="#五、信号的频谱" class="headerlink" title="五、信号的频谱"></a>五、信号的频谱</h3><p>信号的某种特征量随频率变化的关系，称为<strong>信号的频谱</strong>，所画出的图形称为信号的<strong>频谱图</strong>。</p><p><strong>周期信号的频谱</strong>是指傅里叶基数展开式中谐波振幅、相位随频率的变化关系。</p><blockquote><p><em>A</em>n ~ <em>ω</em> <strong>关系图</strong>：<strong>振幅频谱图。</strong></p><p>φn ~ <em>ω</em> <strong>关系图</strong>：<strong>相位频谱图</strong></p></blockquote><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108299.png"></p><h3 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h3><blockquote><p><strong>周期方波信号</strong></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108423.png"></p></blockquote><h4 id="频谱的特点"><a href="#频谱的特点" class="headerlink" title="频谱的特点"></a>频谱的特点</h4><ol><li>离散性：频谱由不连续的谱线组成，每一条谱线代表一谐波分量</li><li>谐波性：谱线只存在于基波及各次谐波频率上  </li><li>收敛性：随着频率ω的增加，振幅 <em>A</em>n将逐渐减小</li></ol><h4 id="周期矩形脉冲信号的频谱分析"><a href="#周期矩形脉冲信号的频谱分析" class="headerlink" title="周期矩形脉冲信号的频谱分析"></a>周期矩形脉冲信号的频谱分析</h4><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108263.png"></p><h5 id="1-复振幅"><a href="#1-复振幅" class="headerlink" title="1.复振幅"></a>1.复振幅</h5><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108666.png"></p><h5 id="2-抽样函数"><a href="#2-抽样函数" class="headerlink" title="2.抽样函数"></a>2.抽样函数</h5><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108731.png"></p><h5 id="3-频谱图"><a href="#3-频谱图" class="headerlink" title="3.频谱图"></a>3.频谱图</h5><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108960.png"></p><hr><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205072108847.png"></p><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> -信号与系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PicGo+Typora+阿里云oss创建个人图床</title>
       <link href="/2022/04/20/picgo-typora-a-li-yun-oss-chuang-jian-ge-ren-tu-chuang/"/>
       <url>/2022/04/20/picgo-typora-a-li-yun-oss-chuang-jian-ge-ren-tu-chuang/</url>
