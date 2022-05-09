@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>信号与系统2</title>
+      <link href="/2022/05/09/xin-hao-yu-xi-tong-2/"/>
+      <url>/2022/05/09/xin-hao-yu-xi-tong-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="傅立叶变换的性质"><a href="#傅立叶变换的性质" class="headerlink" title="傅立叶变换的性质"></a>傅立叶变换的性质</h2><p><img src="https://img-blog.csdnimg.cn/20201118150802736.png"></p><h3 id="1-线性性质"><a href="#1-线性性质" class="headerlink" title="1.线性性质"></a>1.线性性质</h3><p><img src="https://img-blog.csdnimg.cn/20201118150937113.png"></p><h3 id="2-延时性质"><a href="#2-延时性质" class="headerlink" title="2.延时性质"></a>2.延时性质</h3><p><img src="https://img-blog.csdnimg.cn/20201118155400117.png#pic_center"></p><blockquote><p>一个信号在时域中延迟一时间t0,对信号的幅度频谱没有影响，但对信号的相位频谱产生影响，具体为：在频域中所有的信号频谱分量都将给予一个对频率呈线性关系的滞后相移w*t0。</p></blockquote><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091934472.png"></p><h3 id="3-移频特性"><a href="#3-移频特性" class="headerlink" title="3.移频特性"></a>3.移频特性</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091935673.png"></p><blockquote><p>此式说明：一个信号在时域中与$e^(jω_0 t)$相乘，等效于在频域中将整个频谱向频率增大的方向搬移$w_0$。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091942478.png"></p></blockquote><blockquote><p>频移特性的实质是<code>频谱搬移</code>，它是通信理论中信号<code>调制</code>与<code>解调</code>的理论基础。</p></blockquote><p>但在实际中并不会把实函数乘以复指数函数，而是乘以正弦函数，可以利用<code>欧拉公式</code>进行变换。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091948370.png"></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091948000.png"></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091943449.png"></p><p>调频：反映在时域就是用一高频正弦信号去乘调制信号，反映在频域就是把调制信号的频谱搬移了一个频率，在搬移的过程中，信号频谱的结构保持不变。实施调频的方法就是在时域中乘一个高频正弦波。</p><h3 id="4-尺度变换特征"><a href="#4-尺度变换特征" class="headerlink" title="4.尺度变换特征"></a>4.尺度变换特征</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091949840.png"></p><h3 id="5-奇偶性"><a href="#5-奇偶性" class="headerlink" title="5.奇偶性"></a>5.奇偶性</h3><h3 id="6-对称性"><a href="#6-对称性" class="headerlink" title="6.对称性"></a>6.对称性</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091955063.png"></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205091956738.png"></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205092008696.png"></p><h3 id="7-卷积特性"><a href="#7-卷积特性" class="headerlink" title="7.卷积特性"></a>7.卷积特性</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205092011986.png"></p><p>8.微分特性</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205092012487.png"></p><h3 id="9-积分特性"><a href="#9-积分特性" class="headerlink" title="9.积分特性"></a>9.积分特性</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202205092013040.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> -信号与系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信号与系统-1</title>
       <link href="/2022/05/07/xin-hao-yu-xi-tong/"/>
       <url>/2022/05/07/xin-hao-yu-xi-tong/</url>
