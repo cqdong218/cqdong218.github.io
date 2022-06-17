@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>keil合并</title>
+      <link href="/2022/06/17/keil-he-bing/"/>
+      <url>/2022/06/17/keil-he-bing/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、什么是Keil-C51、MDK？"><a href="#一、什么是Keil-C51、MDK？" class="headerlink" title="一、什么是Keil C51、MDK？"></a>一、什么是Keil C51、MDK？</h2><p>Keil C51和MDK是Keil公司开发的两套不同的工具集，包括了<a href="https://so.csdn.net/so/search?q=%E7%BC%96%E8%AF%91%E5%99%A8&amp;spm=1001.2101.3001.7020">编译器</a>、链接器等工具，以及集成了这些工具的集成开发环境（IDE），这个集成开发环境叫uvision。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172327755.png"></p><h2 id="二、为什么要合并？"><a href="#二、为什么要合并？" class="headerlink" title="二、为什么要合并？"></a>二、为什么要合并？</h2><p>我们在安装MDK与Keil C51中的任意一个时，都会同时自动安装uvision开发环境。<br>例如下载到Keil C51是这样一个<a href="https://so.csdn.net/so/search?q=%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6&amp;spm=1001.2101.3001.7020">可执行文件</a>(.exe文件)</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172328169.png" alt="img"></p><p>安装后，在安装目录下会产生UV4文件夹</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172328582.png"></p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172329717.png"></p><p>但是我们有时候还会用到ARM内核的单片机如STM32、 K60等。Keil公司为这些单片机开发了另外一套工具即MDK。同样的方式安装MDK后，将同样自动安装一个uvision开发环境。可以在MDK的安装目录下的UV4文件夹下找到UV4.exe。如果你的电脑上同时安装了Keil C51和MDK，你会发现在MDK对应的uvision开发环境下是无法创建51单片机的工程的。<br>例如在打开MDK的开发环境后新建工程（New Project）时，在选择CPU时，下拉表框只有一个Software Packs选项。Software Packs（软件包）是以包的形式来支持芯片，一般都是比较新的芯片，如STM32、K60等。而51内核单片机属于传统设备（Legacy device）。显然此时在MDK5下是无法创建51工程的。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172330413.png"></p><p>如果打开Keil C51的开发环境（打开在Keil C51的安装目录下的UV4文件夹下找到UV4.exe）并新建工程时只有这样的界面</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172330865.png"></p><p>这也说明了在安装Keil C51和MDK时虽然都自动安装了uvision开发环境，但实际上如果同时安装了Keil C51和MDK，它们自动安装了两个<strong>不同</strong>的uvision开发环境。<br>我们希望MDK与Keil C51能够共用一个uvision，这样我们在打开IDE并新建工程时，可以根据需要选择51内核单片机或ARM内核单片机。而不再需要区分究竟打开的是MDK的IDE还是Keil C51的IDE。</p><h2 id="三、合并方法"><a href="#三、合并方法" class="headerlink" title="三、合并方法"></a>三、合并方法</h2><p>1、在不同的目录下安装Keil C51和MDK(关于安装和注册的方法可以自行搜索，安装的先后顺序没有关系，推荐先安装Keil C51)</p><p>2、完成安装后，将Keil C51安装目录下的TOOLS.INI文件（用记事本打开）中从[C51]开始直至结束的内容复制下来</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172331706.png"></p><p>3、在MDK安装目录下同样找到TOOLS.INI文件（用记事本打开），并将上面复制的内容粘贴到文件的末尾（另起一行），最后保存该文件。</p><p>4、此时再打开MDK对应的开发环境并新建工程时，会发现多了一个Legacy Device选项，选中它就可以在MDK的开发环境下开发51单片机程序。至此已完成Keil C51合并到MDK的开发环境中。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202206172331675.png"></p><p>5、如果先安装MDK再安装Keil C51也没有关系。由于后安装的Keil C51生成的开发环境的桌面上的快捷方式会覆盖掉先安装的MDK的uvision的快捷方式。所以在桌面上看到的快捷方式是Keil C51对应的开发环境。由于我们是将Keil C51合并到MDK的开发环境中，因此只要在MDK的安装目录下找到UV4文件夹下的UV4.exe并右击创建快捷方式，将快捷方式复制到桌面上，并删除原来桌面上的Keil C51对应的开发环境的快捷方式即可。（如果先安装Keil C51后安装MDK则省去这一步)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> -KEILc51与MDK的合并 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信号与系统2</title>
       <link href="/2022/05/09/xin-hao-yu-xi-tong-2/"/>
       <url>/2022/05/09/xin-hao-yu-xi-tong-2/</url>
