@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>自动控制原理(1)</title>
+      <link href="/2022/09/07/zi-dong-kong-zhi-yuan-li-1/"/>
+      <url>/2022/09/07/zi-dong-kong-zhi-yuan-li-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h2><blockquote><p><code>自动控制原理</code>（自动控制理论 自动调节原理 反馈控制理论，简称自控）是研究自动控制系统共同规律的技术科学。它是一门技术与理论基础课，主要研究自动控制系统的组成、分析和设计的理论。</p></blockquote><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071049865.png"></p><h2 id="1-自动控制原理"><a href="#1-自动控制原理" class="headerlink" title="1.自动控制原理"></a>1.自动控制原理</h2><p><code>自动控制</code>：是指在没有人直接参与的情况下，利用控制装置（控制器），使机器、设备或生产过程（被控对象）的某一工作状态或参数 （被控量）自动按照预定的规律运行。</p><ul><li><p>自动控制技术应用领域：冰箱、空调、洗衣机、电梯、汽车、电厂锅炉、 酿酒过程、航空航天等各种机器或生产过程控制以及军事领域。</p></li><li><p>人在控制过程中起三个作用：</p><ol><li><strong>观测</strong>：用<code>眼睛</code>去观测，如温度计、转速表等的指示值；</li><li><strong>比较与决策</strong>：<code>人脑</code>把观测得到的数据与要求的数据相比较，并进行判断，根据给定的控制规律给出控制量；</li><li><strong>执行</strong>：根据控制量用<code>手</code>具体调节，如调节阀门开度、改变触点位置。</li></ol></li></ul><ul><li><p><code>被控对象</code>：控制系统要进行控制的受控客体，如冰箱，空调，电机等。</p></li><li><p><code>被控变量</code>：是一种被测量和被控制的量值或状态。在工业技术领域指被 控制对象要实现的物理量。</p></li><li><p><code>系统</code>：由一些对象相互作用，相互制约，组成一个具有一定运动规律的整体。</p></li><li><p><code>控制系统</code>：由被控对象和控制器构成的整体</p></li><li><p><code>扰动</code>：对系统的输出量（被控变量）产生不利影响的信号。 如果扰动产生在系统的内部，称为内部扰动； 当扰动产生在系统的外部时，则称之为外部扰动。</p></li><li><p><code>自动控制的分类</code></p><ul><li>按控制方式<ul><li>开环控制</li><li>闭环控制（反馈控制）</li><li>复合控制</li></ul></li><li>按对象方式<ul><li>运动控制 （电机调速、机器人等）</li><li>过程控制 （被控对象为某种生产过程，如化工过程）</li></ul></li></ul></li></ul><h3 id="1-2开环控制系统（Open-loop-Control-System）"><a href="#1-2开环控制系统（Open-loop-Control-System）" class="headerlink" title="1.2开环控制系统（Open-loop Control System）"></a>1.2开环控制系统（Open-loop Control System）</h3><p><code>定义</code>：系统的控制输入量不受输出量影响的控制系统 </p><p><code>特点</code>：系统的输出量与输入量间不存在反馈的通道</p><p>​    在开环控制系统中，不需要对输出量进行测量，也不需要将输出量反馈到系统输入端与输入量进行比较。因此，开环控制系统又称<code>无反馈控制系统</code>。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071109454.png"></p><h4 id="按干扰补偿的开环控制"><a href="#按干扰补偿的开环控制" class="headerlink" title="按干扰补偿的开环控制"></a>按干扰补偿的开环控制</h4><p>该系统对干扰进行量，利用测量得到的干扰值修正控制作用，补偿干扰对被控量的影响。 从干扰作用端至输出端，也仅有顺向作用而无反向联系，因此也是开环控制。这种控制方式使用的前提条件是干扰能够被测量到。</p><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071112405.png"></p><h3 id="1-3闭环控制系统（Closed-loop-Control-System）"><a href="#1-3闭环控制系统（Closed-loop-Control-System）" class="headerlink" title="1.3闭环控制系统（Closed-loop Control System）"></a>1.3闭环控制系统（Closed-loop Control System）</h3><ul><li><p><code>闭环控制系统</code>又称反馈控制系统， 是应用最广泛的控制方式。</p></li><li><p><code>负反馈</code>：把取出的输出量送回输入端，并与输入信号相比较产生偏差信号的过程，称为负反馈 。</p></li><li><p> <code>反馈控制</code>：采用负反馈（正反馈较少使用）并利用偏差进行控制的过程 （利用偏差修正偏差）。</p></li><li><p> 由于引入了被反馈量的反馈信息，整个控制过程成为闭合的，因此反馈控制也称为闭环控制 。</p></li></ul><h4 id="闭环控制系统的基本组成："><a href="#闭环控制系统的基本组成：" class="headerlink" title="闭环控制系统的基本组成："></a>闭环控制系统的基本组成：</h4><p><code>给定元件</code>：产生给定值或输入信号量即参考量或期望值</p><p><code>测量元件</code>：测量被控制的物理量（被控量），用于产生反馈信号的各种传 感器：测速发电机、电位计、热电偶等。</p><p><code>比较元件</code>：把测量元件检测的实际值（被控量）与给定元件给出的参考量 进行比较，求出它们之间的偏差。如差动放大器、自整角机。</p><p><code>放大元件</code>：将比较元件给出的偏差进行放大，用来推动执行元件去控制 被控对象，如放大器、晶闸管。</p><p><code>执行机构</code>：直接推动被控对象，使其被控量发生变化如步进电机，继电 器开关。</p><p><code>补偿（校正）元件</code>：它是结构或参数便于调整的元件或机构，用串联或 反馈的方式连接在系统中，以改善控制系统性能。</p><ul><li><p>开环控制和闭环控制的优缺点</p></li><li><ul><li><strong>开环控制系统</strong>：没有反馈，结构简单，但抗扰性差，控制精度低</li><li><strong>反馈控制系统</strong>：有反馈，抗扰性强，控制精度高，但结构复杂，易不稳定</li><li><strong>复合控制系统</strong>（按扰动/输入补偿+闭环控制）：补偿控制可更快地及时抑制可测扰动对输出的影响（对其他扰动没有抑制作用）；反馈控制可抑制一般扰动对输出的影响；两者的结合可改善抗扰性，提高控制精度；缺点是结构较复杂。</li></ul></li></ul><p>先去做核酸了，下午写~~~~~~~</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> -自动控制原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>windows连接Linux服务器进行深度学习</title>
       <link href="/2022/09/06/windows-lian-jie-linux-fu-wu-qi-jin-xing-shen-du-xue-xi/"/>
       <url>/2022/09/06/windows-lian-jie-linux-fu-wu-qi-jin-xing-shen-du-xue-xi/</url>
