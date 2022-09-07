@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="自动控制原理(1), BLOG">
-    <meta name="description" content="0.前言
+    <meta name="description" content="前言
 自动控制原理（自动控制理论 自动调节原理 反馈控制理论，简称自控）是研究自动控制系统共同规律的技术科学。它是一门技术与理论基础课，主要研究自动控制系统的组成、分析和设计的理论。
 
 
-1.自动控制原理自动控制：是指在没有人直接参与的">
+自动控制原理自动控制：是指在没有人直接参与的情况下，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -398,7 +398,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
@@ -418,11 +418,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h2><blockquote>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p><code>自动控制原理</code>（自动控制理论 自动调节原理 反馈控制理论，简称自控）是研究自动控制系统共同规律的技术科学。它是一门技术与理论基础课，主要研究自动控制系统的组成、分析和设计的理论。</p>
 </blockquote>
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071049865.png"></p>
-<h2 id="1-自动控制原理"><a href="#1-自动控制原理" class="headerlink" title="1.自动控制原理"></a>1.自动控制原理</h2><p><code>自动控制</code>：是指在没有人直接参与的情况下，利用控制装置（控制器），使机器、设备或生产过程（被控对象）的某一工作状态或参数 （被控量）自动按照预定的规律运行。</p>
+<h2 id="自动控制原理"><a href="#自动控制原理" class="headerlink" title="自动控制原理"></a>自动控制原理</h2><p><code>自动控制</code>：是指在没有人直接参与的情况下，利用控制装置（控制器），使机器、设备或生产过程（被控对象）的某一工作状态或参数 （被控量）自动按照预定的规律运行。</p>
 <ul>
 <li><p>自动控制技术应用领域：冰箱、空调、洗衣机、电梯、汽车、电厂锅炉、 酿酒过程、航空航天等各种机器或生产过程控制以及军事领域。</p>
 </li>
@@ -445,29 +445,64 @@
 </li>
 <li><p><code>扰动</code>：对系统的输出量（被控变量）产生不利影响的信号。 如果扰动产生在系统的内部，称为内部扰动； 当扰动产生在系统的外部时，则称之为外部扰动。</p>
 </li>
-<li><p><code>自动控制的分类</code></p>
+</ul>
 <ul>
-<li>按控制方式<ul>
+<li><strong><code>自动控制的分类</code></strong><ul>
+<li><strong>按控制方式</strong><ul>
 <li>开环控制</li>
 <li>闭环控制（反馈控制）</li>
 <li>复合控制</li>
 </ul>
 </li>
-<li>按对象方式<ul>
+<li><strong>按对象方式</strong><ul>
 <li>运动控制 （电机调速、机器人等）</li>
 <li>过程控制 （被控对象为某种生产过程，如化工过程）</li>
 </ul>
 </li>
+<li><strong>按给定信号的形式</strong><ul>
+<li>恒值系统</li>
+<li>随动(伺服)系统 </li>
+<li>程控系统</li>
+</ul>
+</li>
+<li><strong>按是否满足叠加原理</strong>   <ul>
+<li>线性系统 </li>
+<li>非线性系统</li>
+</ul>
+</li>
+<li><strong>按参数是否随时间变化</strong> <ul>
+<li>定常系统</li>
+<li>时变系统</li>
+</ul>
+</li>
+<li><strong>按信号传递的形式</strong><ul>
+<li>连续系统</li>
+<li>离散系统</li>
+</ul>
+</li>
+<li><strong>按输入输出变量的多少</strong> <ul>
+<li>单变量系统 </li>
+<li>多变量系统</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-2开环控制系统（Open-loop-Control-System）"><a href="#1-2开环控制系统（Open-loop-Control-System）" class="headerlink" title="1.2开环控制系统（Open-loop Control System）"></a>1.2开环控制系统（Open-loop Control System）</h3><p><code>定义</code>：系统的控制输入量不受输出量影响的控制系统 </p>
+</li>
+</ul>
+<ul>
+<li><strong><code>控制系统的基本要求</code></strong><ul>
+<li>稳：（基本要求）<strong>要求系统要稳定</strong></li>
+<li>准：（稳态要求）<strong>系统响应达到稳态时，输出跟踪精度要高</strong></li>
+<li>快：（动态要求）<strong>系统阶跃响应的过渡过程要平稳， 快速</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="开环控制系统（Open-loop-Control-System）"><a href="#开环控制系统（Open-loop-Control-System）" class="headerlink" title="开环控制系统（Open-loop Control System）"></a>开环控制系统（Open-loop Control System）</h3><p><code>定义</code>：系统的控制输入量不受输出量影响的控制系统 </p>
 <p><code>特点</code>：系统的输出量与输入量间不存在反馈的通道</p>
 <p>​    在开环控制系统中，不需要对输出量进行测量，也不需要将输出量反馈到系统输入端与输入量进行比较。因此，开环控制系统又称<code>无反馈控制系统</code>。</p>
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071109454.png"></p>
 <h4 id="按干扰补偿的开环控制"><a href="#按干扰补偿的开环控制" class="headerlink" title="按干扰补偿的开环控制"></a>按干扰补偿的开环控制</h4><p>该系统对干扰进行量，利用测量得到的干扰值修正控制作用，补偿干扰对被控量的影响。 从干扰作用端至输出端，也仅有顺向作用而无反向联系，因此也是开环控制。这种控制方式使用的前提条件是干扰能够被测量到。</p>
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071112405.png"></p>
-<h3 id="1-3闭环控制系统（Closed-loop-Control-System）"><a href="#1-3闭环控制系统（Closed-loop-Control-System）" class="headerlink" title="1.3闭环控制系统（Closed-loop Control System）"></a>1.3闭环控制系统（Closed-loop Control System）</h3><ul>
+<h3 id="闭环控制系统（Closed-loop-Control-System）"><a href="#闭环控制系统（Closed-loop-Control-System）" class="headerlink" title="闭环控制系统（Closed-loop Control System）"></a>闭环控制系统（Closed-loop Control System）</h3><ul>
 <li><p><code>闭环控制系统</code>又称反馈控制系统， 是应用最广泛的控制方式。</p>
 </li>
 <li><p><code>负反馈</code>：把取出的输出量送回输入端，并与输入信号相比较产生偏差信号的过程，称为负反馈 。</p>
@@ -477,15 +512,22 @@
 <li><p> 由于引入了被反馈量的反馈信息，整个控制过程成为闭合的，因此反馈控制也称为闭环控制 。</p>
 </li>
 </ul>
-<h4 id="闭环控制系统的基本组成："><a href="#闭环控制系统的基本组成：" class="headerlink" title="闭环控制系统的基本组成："></a>闭环控制系统的基本组成：</h4><p><code>给定元件</code>：产生给定值或输入信号量即参考量或期望值</p>
-<p><code>测量元件</code>：测量被控制的物理量（被控量），用于产生反馈信号的各种传 感器：测速发电机、电位计、热电偶等。</p>
-<p><code>比较元件</code>：把测量元件检测的实际值（被控量）与给定元件给出的参考量 进行比较，求出它们之间的偏差。如差动放大器、自整角机。</p>
-<p><code>放大元件</code>：将比较元件给出的偏差进行放大，用来推动执行元件去控制 被控对象，如放大器、晶闸管。</p>
-<p><code>执行机构</code>：直接推动被控对象，使其被控量发生变化如步进电机，继电 器开关。</p>
-<p><code>补偿（校正）元件</code>：它是结构或参数便于调整的元件或机构，用串联或 反馈的方式连接在系统中，以改善控制系统性能。</p>
-<ul>
-<li><p>开环控制和闭环控制的优缺点</p>
+<h4 id="闭环控制系统的基本组成："><a href="#闭环控制系统的基本组成：" class="headerlink" title="闭环控制系统的基本组成："></a>闭环控制系统的基本组成：</h4><ul>
+<li><p><code>给定元件</code>：产生给定值或输入信号量即参考量或期望值</p>
 </li>
+<li><p><code>测量元件</code>：测量被控制的物理量（被控量），用于产生反馈信号的各种传 感器：测速发电机、电位计、热电偶等。</p>
+</li>
+<li><p><code>比较元件</code>：把测量元件检测的实际值（被控量）与给定元件给出的参考量 进行比较，求出它们之间的偏差。如差动放大器、自整角机。</p>
+</li>
+<li><p><code>放大元件</code>：将比较元件给出的偏差进行放大，用来推动执行元件去控制 被控对象，如放大器、晶闸管。</p>
+</li>
+<li><p><code>执行机构</code>：直接推动被控对象，使其被控量发生变化如步进电机，继电 器开关。</p>
+</li>
+<li><p><code>补偿（校正）元件</code>：它是结构或参数便于调整的元件或机构，用串联或 反馈的方式连接在系统中，以改善控制系统性能。</p>
+</li>
+</ul>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071425123.png"></p>
+<h3 id="开环控制和闭环控制的优缺点"><a href="#开环控制和闭环控制的优缺点" class="headerlink" title="开环控制和闭环控制的优缺点"></a>开环控制和闭环控制的优缺点</h3><ul>
 <li><ul>
 <li><strong>开环控制系统</strong>：没有反馈，结构简单，但抗扰性差，控制精度低</li>
 <li><strong>反馈控制系统</strong>：有反馈，抗扰性强，控制精度高，但结构复杂，易不稳定</li>
@@ -493,7 +535,12 @@
 </ul>
 </li>
 </ul>
-<p>先去做核酸了，下午写~~~~~~~</p>
+<h3 id="复合控制系统（Compound-Control-System）"><a href="#复合控制系统（Compound-Control-System）" class="headerlink" title="复合控制系统（Compound Control System）"></a>复合控制系统（Compound Control System）</h3><p><code>复合控制系统</code>是<code>开环控制</code>和<code>闭环控制</code>相结合的一种控制方式,是构成高精度控制系统的一种有效控制方式，使控制系统具有良好的控制性能。 复合控制的两种基本形式：<code>按输入前馈补偿</code>和 <code>按干扰前馈补偿</code>的复合控制.</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071421546.png"></p>
+<h3 id="典型外作用"><a href="#典型外作用" class="headerlink" title="典型外作用"></a>典型外作用</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423249.png"></p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423741.png"></p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423160.png"></p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423396.png"></p>
 
                 
             </div>
@@ -1004,7 +1051,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.2k</span>
+                        class="white-color">10.4k</span>
             
             
             
