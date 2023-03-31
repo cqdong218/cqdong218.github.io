@@ -4,12 +4,21 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="自动控制原理(1), BLOG">
-    <meta name="description" content="前言
-自动控制原理（自动控制理论 自动调节原理 反馈控制理论，简称自控）是研究自动控制系统共同规律的技术科学。它是一门技术与理论基础课，主要研究自动控制系统的组成、分析和设计的理论。
+    <meta name="keywords" content="PID控制学习, BLOG">
+    <meta name="description" content="PID控制
 
+在写PID之前先介绍一下各种控制方式【截图自B站UP：421施工队】
+1.开环控制系统
 
-自动控制原理自动控制：是指在没有人直接参与的情况下，">
+2.前馈控制系统
+
+3.闭环控制系统
+
+4.双闭环控制系统
+
+4.复合控制系统
+
+1.什么是PIDPID，即比例Proportion、积">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +32,7 @@
 
     
 
-    <title>自动控制原理(1) | BLOG</title>
+    <title>PID控制学习 | BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -257,7 +266,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">自动控制原理(1)</h1>
+                    <h1 class="description center-align post-title">PID控制学习</h1>
                 </div>
             </div>
         </div>
@@ -373,8 +382,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/">
-                                <span class="chip bg-color">-自动控制原理</span>
+                            <a href="/tags/PID/">
+                                <span class="chip bg-color">-PID</span>
                             </a>
                         
                     </div>
@@ -389,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-07
+                    2023-03-31
                 </div>
                 
 
@@ -398,7 +407,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.2k
                 </div>
                 
 
@@ -418,129 +427,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p><code>自动控制原理</code>（自动控制理论 自动调节原理 反馈控制理论，简称自控）是研究自动控制系统共同规律的技术科学。它是一门技术与理论基础课，主要研究自动控制系统的组成、分析和设计的理论。</p>
-</blockquote>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071049865.png"></p>
-<h2 id="自动控制原理"><a href="#自动控制原理" class="headerlink" title="自动控制原理"></a>自动控制原理</h2><p><code>自动控制</code>：是指在没有人直接参与的情况下，利用控制装置（控制器），使机器、设备或生产过程（被控对象）的某一工作状态或参数 （被控量）自动按照预定的规律运行。</p>
-<ul>
-<li><p>自动控制技术应用领域：冰箱、空调、洗衣机、电梯、汽车、电厂锅炉、 酿酒过程、航空航天等各种机器或生产过程控制以及军事领域。</p>
-</li>
-<li><p>人在控制过程中起三个作用：</p>
-<ol>
-<li><strong>观测</strong>：用<code>眼睛</code>去观测，如温度计、转速表等的指示值；</li>
-<li><strong>比较与决策</strong>：<code>人脑</code>把观测得到的数据与要求的数据相比较，并进行判断，根据给定的控制规律给出控制量；</li>
-<li><strong>执行</strong>：根据控制量用<code>手</code>具体调节，如调节阀门开度、改变触点位置。</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p><code>被控对象</code>：控制系统要进行控制的受控客体，如冰箱，空调，电机等。</p>
-</li>
-<li><p><code>被控变量</code>：是一种被测量和被控制的量值或状态。在工业技术领域指被 控制对象要实现的物理量。</p>
-</li>
-<li><p><code>系统</code>：由一些对象相互作用，相互制约，组成一个具有一定运动规律的整体。</p>
-</li>
-<li><p><code>控制系统</code>：由被控对象和控制器构成的整体</p>
-</li>
-<li><p><code>扰动</code>：对系统的输出量（被控变量）产生不利影响的信号。 如果扰动产生在系统的内部，称为内部扰动； 当扰动产生在系统的外部时，则称之为外部扰动。</p>
-</li>
-</ul>
-<ul>
-<li><strong><code>自动控制的分类</code></strong><ul>
-<li><strong>按控制方式</strong><ul>
-<li>开环控制</li>
-<li>闭环控制（反馈控制）</li>
-<li>复合控制</li>
-</ul>
-</li>
-<li><strong>按对象方式</strong><ul>
-<li>运动控制 （电机调速、机器人等）</li>
-<li>过程控制 （被控对象为某种生产过程，如化工过程）</li>
-</ul>
-</li>
-<li><strong>按给定信号的形式</strong><ul>
-<li>恒值系统</li>
-<li>随动(伺服)系统 </li>
-<li>程控系统</li>
-</ul>
-</li>
-<li><strong>按是否满足叠加原理</strong>   <ul>
-<li>线性系统 </li>
-<li>非线性系统</li>
-</ul>
-</li>
-<li><strong>按参数是否随时间变化</strong> <ul>
-<li>定常系统</li>
-<li>时变系统</li>
-</ul>
-</li>
-<li><strong>按信号传递的形式</strong><ul>
-<li>连续系统</li>
-<li>离散系统</li>
-</ul>
-</li>
-<li><strong>按输入输出变量的多少</strong> <ul>
-<li>单变量系统 </li>
-<li>多变量系统</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong><code>控制系统的基本要求</code></strong><ul>
-<li>稳：（基本要求）<strong>要求系统要稳定</strong></li>
-<li>准：（稳态要求）<strong>系统响应达到稳态时，输出跟踪精度要高</strong></li>
-<li>快：（动态要求）<strong>系统阶跃响应的过渡过程要平稳， 快速</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="开环控制系统（Open-loop-Control-System）"><a href="#开环控制系统（Open-loop-Control-System）" class="headerlink" title="开环控制系统（Open-loop Control System）"></a>开环控制系统（Open-loop Control System）</h3><p><code>定义</code>：系统的控制输入量不受输出量影响的控制系统 </p>
-<p><code>特点</code>：系统的输出量与输入量间不存在反馈的通道</p>
-<p>​    在开环控制系统中，不需要对输出量进行测量，也不需要将输出量反馈到系统输入端与输入量进行比较。因此，开环控制系统又称<code>无反馈控制系统</code>。</p>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071109454.png"></p>
-<h4 id="按干扰补偿的开环控制"><a href="#按干扰补偿的开环控制" class="headerlink" title="按干扰补偿的开环控制"></a>按干扰补偿的开环控制</h4><p>该系统对干扰进行量，利用测量得到的干扰值修正控制作用，补偿干扰对被控量的影响。 从干扰作用端至输出端，也仅有顺向作用而无反向联系，因此也是开环控制。这种控制方式使用的前提条件是干扰能够被测量到。</p>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071112405.png"></p>
-<h3 id="闭环控制系统（Closed-loop-Control-System）"><a href="#闭环控制系统（Closed-loop-Control-System）" class="headerlink" title="闭环控制系统（Closed-loop Control System）"></a>闭环控制系统（Closed-loop Control System）</h3><ul>
-<li><p><code>闭环控制系统</code>又称反馈控制系统， 是应用最广泛的控制方式。</p>
-</li>
-<li><p><code>负反馈</code>：把取出的输出量送回输入端，并与输入信号相比较产生偏差信号的过程，称为负反馈 。</p>
-</li>
-<li><p> <code>反馈控制</code>：采用负反馈（正反馈较少使用）并利用偏差进行控制的过程 （利用偏差修正偏差）。</p>
-</li>
-<li><p> 由于引入了被反馈量的反馈信息，整个控制过程成为闭合的，因此反馈控制也称为闭环控制 。</p>
-</li>
-</ul>
-<h4 id="闭环控制系统的基本组成："><a href="#闭环控制系统的基本组成：" class="headerlink" title="闭环控制系统的基本组成："></a>闭环控制系统的基本组成：</h4><ul>
-<li><p><code>给定元件</code>：产生给定值或输入信号量即参考量或期望值</p>
-</li>
-<li><p><code>测量元件</code>：测量被控制的物理量（被控量），用于产生反馈信号的各种传 感器：测速发电机、电位计、热电偶等。</p>
-</li>
-<li><p><code>比较元件</code>：把测量元件检测的实际值（被控量）与给定元件给出的参考量 进行比较，求出它们之间的偏差。如差动放大器、自整角机。</p>
-</li>
-<li><p><code>放大元件</code>：将比较元件给出的偏差进行放大，用来推动执行元件去控制 被控对象，如放大器、晶闸管。</p>
-</li>
-<li><p><code>执行机构</code>：直接推动被控对象，使其被控量发生变化如步进电机，继电 器开关。</p>
-</li>
-<li><p><code>补偿（校正）元件</code>：它是结构或参数便于调整的元件或机构，用串联或 反馈的方式连接在系统中，以改善控制系统性能。</p>
-</li>
-</ul>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071425123.png"></p>
-<h3 id="开环控制和闭环控制的优缺点"><a href="#开环控制和闭环控制的优缺点" class="headerlink" title="开环控制和闭环控制的优缺点"></a>开环控制和闭环控制的优缺点</h3><ul>
-<li><ul>
-<li><strong>开环控制系统</strong>：没有反馈，结构简单，但抗扰性差，控制精度低</li>
-<li><strong>反馈控制系统</strong>：有反馈，抗扰性强，控制精度高，但结构复杂，易不稳定</li>
-<li><strong>复合控制系统</strong>（按扰动/输入补偿+闭环控制）：补偿控制可更快地及时抑制可测扰动对输出的影响（对其他扰动没有抑制作用）；反馈控制可抑制一般扰动对输出的影响；两者的结合可改善抗扰性，提高控制精度；缺点是结构较复杂。</li>
-</ul>
-</li>
-</ul>
-<h3 id="复合控制系统（Compound-Control-System）"><a href="#复合控制系统（Compound-Control-System）" class="headerlink" title="复合控制系统（Compound Control System）"></a>复合控制系统（Compound Control System）</h3><p><code>复合控制系统</code>是<code>开环控制</code>和<code>闭环控制</code>相结合的一种控制方式,是构成高精度控制系统的一种有效控制方式，使控制系统具有良好的控制性能。 复合控制的两种基本形式：<code>按输入前馈补偿</code>和 <code>按干扰前馈补偿</code>的复合控制.</p>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071421546.png"></p>
-<h3 id="典型外作用"><a href="#典型外作用" class="headerlink" title="典型外作用"></a>典型外作用</h3><p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423249.png"></p>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423741.png"></p>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423160.png"></p>
-<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202209071423396.png"></p>
+                <h1 id="PID控制"><a href="#PID控制" class="headerlink" title="PID控制"></a>PID控制</h1><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856500.jpeg" style="zoom:80%;">
+
+<p>在写PID之前先介绍一下各种控制方式【截图自B站UP：<strong>421施工队</strong>】</p>
+<p>1.开环控制系统</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856563.png" alt="开环控制"></p>
+<p>2.前馈控制系统</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856604.png" alt="前馈控制"></p>
+<p>3.闭环控制系统</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856554.png" alt="闭环控制"></p>
+<p>4.双闭环控制系统</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856568.png" alt="双闭环控制"></p>
+<p>4.复合控制系统</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856597.png" alt="复合控制"></p>
+<h2 id="1-什么是PID"><a href="#1-什么是PID" class="headerlink" title="1.什么是PID"></a>1.什么是PID</h2><p>PID，即<strong>比例Proportion</strong>、<strong>积分Integral</strong>和<strong>微分Derivative</strong>三个单词的缩写。本质上是一种负反馈控制，特别适用于过程动态性能良好和性能要求不太高的情况下。小到控制一个元件的温度，大到控制无人机的飞行姿态和飞行速度等等，都可以使用PID控制。</p>
+<p><strong>公式</strong>如下：</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856206.png"></p>
+<p><strong>三个重要的参数</strong>：</p>
+<p><strong>Kp</strong>：控制器的比例系数.</p>
+<p><strong>Ti</strong>：控制器的积分时间，也称积分系数.</p>
+<p><strong>Td</strong>：控制器的微分时间，也称微分系数.</p>
+<p>​    用无人机的例子（其实是为了更好理解为什么纯比例环节总有稳态误差！），无人机螺旋桨转动提供升力，同时自身又受重力，假定无人机螺旋桨转速100rpm时，重力等于升力，无人机悬停。</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303302129239.png" alt="无人机"></p>
+<h3 id="1、P-比例部分"><a href="#1、P-比例部分" class="headerlink" title="1、P - 比例部分"></a><strong>1、P - 比例部分</strong></h3><p>首先考虑用纯比例环节P，只要调节Kp，假设初始时刻无人机在地面，height=0m</p>
+<p>令Kp=1，e=y-x=100   u=Kp * e=100，这个升力仅能悬停在地面，误差仍是100m；</p>
+<p>那我们把Kp调大为2，e=y-x=100   u=Kp * e=200，此时升力大于重力，无人机高度会增大，误差会减小[这里不用在意误差以及控制器输出以及无人机高度的曲线，如果是连续，不是直线，而是曲线]</p>
+<p>经过一段时间，当误差为50时，e=y-x=50   u=Kp * e=100，这时升力等于重力，使无人机悬停在50m处；</p>
+<p>就算我们将Kp调到99，经过一段时间，e=1时，u=Kp * e=100，无人机悬停在99m处，也就是说永远有静态误差。</p>
+<p>我曾思考过将Kp调制无穷，这样稳态误差不就趋于0了，但是这是简化了的模型，实际还有其他因素，并且Kp太大会导致系统稳定性变差。例如在调车的时候，仅有P就会出现狂摆头的现象。（等幅振荡或者发散振荡）</p>
+<pre class="line-numbers language-base" data-language="base"><code class="language-base">比例环节的作用是对偏差瞬间作出反应。偏差一旦产生控制器立即产生控制作用，使控制量向减少偏差的方向变化。
+控制作用的强弱取决于比例系数Kp， 比例系数Kp越大，控制作用越强，则过渡过程越快，控制过程的静态偏差也就越小；
+但是Kp越大，也越容易产生振荡，破坏系统的稳定性。故而，比例系数Kp选择必须恰当，才能过渡时间少， 静差小而又稳定的效果。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>下面我们考虑将积分环节加入!</p>
+<h3 id="2、I-积分部分"><a href="#2、I-积分部分" class="headerlink" title="2、I - 积分部分"></a><strong>2、I - 积分部分</strong></h3><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303302156426.png" alt="稳态误差" style="zoom:50%;">
+
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303302157044.png" alt="模型"></p>
+<p>假设此时稳态误差为1m，KP=100，由上可知此时纯比例环节提供的升力仅能使其悬停在99m处，这时引入积分环节，积分环节考虑<strong>过去</strong>的误差，从积分部分的数学表达式可以知道， 只要存在偏差，则它的控制作用就不断的增加；只有在偏差e(t)＝0时，它的积分才能是一个常数，控制作用才是一个不会增加的常数。可见，<strong>积分部分可以消除系统的偏差</strong>。</p>
+<p>下面图解一下积分的作用，我们假设误差一直是1m，那么比例控制提供的升力仅能使其悬停，这时积分控制的作用就体现出来了，只要有误差它就累计，与比例控制作用相叠加就会使无人机上升。</p>
+<img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303302202810.png" alt="方便理解" style="zoom:80%;">
+
+<p>由于无人机会上升，那么误差就不能一直是1m，下图是实际情况：</p>
+<img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303302230969.png" alt="实际情况" style="zoom:80%;">
+
+<p>误差下降直到 0，紧跟着比例控制的作用为0（或者叫输出为0），但是积分控制并不为0，因为他已经积累原来的误差，就算现在误差为0，它只是不再增加了，而不是变为0，此时他提供升力，这时有几种情况  ①转速大于100rpm，这时会出现超调，②转速等于100rpm，正好误差为0，完美！！！<strong>【不确定，但研究也没啥意义】</strong>但是不可能小于100rpm，因为只要小于100rpm，误差就大于0，还会接着积分加上比例控制进行修正直至误差为0。</p>
+<p>所以说，加入Ki能消除稳态误差。Ki大的话会产生超调，也就是上面①情况，这时要引入微分环节。</p>
+<pre class="line-numbers language-base" data-language="base"><code class="language-base">积分环节的调节作用虽然会消除静态误差，但也会降低系统的响应速度，增加系统的超调量。Ki越小，积分的积累作用越弱，这时系统在过渡时不会产生振荡； 但是Ki减小会减慢静态误差的消除过程，消除偏差所需的时间也较长，但可以减少超调量，提高系统的稳定性。
+
+当 Ki 较大时，则积分的作用较强，这时系统过渡时间中有可能产生振荡，不过消除偏差所需的时间较短。所以必须根据实际控制的具体要求来确定Ki 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="3、D-微分部分"><a href="#3、D-微分部分" class="headerlink" title="3、D - 微分部分"></a><strong>3、D - 微分部分</strong></h3><p>​    实际的控制系统除了希望消除静态误差外，还要求加快调节过程。在偏差出现的瞬间，或在偏差变化的瞬间， 不但要对偏差量做出立即响应（比例环节的作用），而且要根据偏差的变化趋势预先给出适当的纠正。为了实现这一作用，可在 PI 控制器的基础上加入微分环节，形成 PID 控制器。</p>
+<p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856719.png"></p>
+<p>此时，PI控制使误差迅速减小，由于微分作用在接近目标值时，起控制作用还是很强，就会出现超调，无人机高度超过100m，引入了微分控制，考虑下一刻时间的误差，要是小于当前误差，求导为负数，相当于给电机一个反向电压，减小其升力，提前阻止其超调，由于是提前控制，加快了调节过程，使动态性能变好。</p>
+<pre class="line-numbers language-base" data-language="base"><code class="language-base">微分环节的作用使阻止偏差的变化。它是根据偏差的变化趋势（变化速度）进行控制。偏差变化的越快，微分控制器的输出就越大，并能在偏差值变大之前进行修正。
+微分作用的引入，将有助于减小超调量，克服振荡，使系统趋于稳定，特别对髙阶系统非常有利，它加快了系统的跟踪速度。但微分的作用对输入信号的噪声很敏感，对那些噪声较大的系统一般不用微分，或在微分起作用之前先对输入信号进行滤波。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="2-PID参数整定"><a href="#2-PID参数整定" class="headerlink" title="2.PID参数整定"></a>2.PID参数整定</h2><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856757.png" style="zoom:80%;">
+
+<h3 id="1-先调节Kp"><a href="#1-先调节Kp" class="headerlink" title="1.先调节Kp"></a>1.先调节Kp</h3><p>Kp越小，稳态误差越大，调节速度越慢；随着增大，渐渐能跟上输出（稳态误差减小），但还是存在稳态误差；调节速度也变快了，提高了系统的响应速度；但是稳定性变差，可能会出现/加剧等幅振荡或者发散….</p>
+<h3 id="2-然后加入Ki"><a href="#2-然后加入Ki" class="headerlink" title="2.然后加入Ki"></a>2.然后加入Ki</h3><p>ki增大会一定程度上提高响应速度；但会使系统的动态开环增益增大，从而导致系统的稳定性降低，引起或加剧系统振荡；</p>
+<p>Ki可以减小稳态误差，但会使系统的动态品质变差，积分是牺牲了动态品质来换取稳态性能的改善。</p>
+<p>会存在积分饱和现象！利用积分分离或者积分限幅解决！</p>
+<pre class="line-numbers language-none"><code class="language-none">由此可见，比例控制实现粗调，积分控制实现细调，PI控制是将比例控制的快速反应与积分控制的消除稳态误差的功能相结合！<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-最后加入Kd"><a href="#3-最后加入Kd" class="headerlink" title="3.最后加入Kd"></a>3.最后加入Kd</h3><p>如果调好后系统出现超调，再加入Kd，Kd引入相当于增加了一个零点，改善动态性能；</p>
+<p>能抑制过渡过程的超调，提高响应速度。不宜太大，太大相当于对信号变化比较敏感，容易造成系统振荡。</p>
+<h3 id="4-总的来说"><a href="#4-总的来说" class="headerlink" title="4.总的来说"></a>4.总的来说</h3><p>一般用PI就够了，如果出现超调，就用PID</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856775.gif"></h2><h2 id="3-参考"><a href="#3-参考" class="headerlink" title="3.参考"></a>3.参考</h2><p>[1]  <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45113223/article/details/125714586">https://blog.csdn.net/qq_45113223/article/details/125714586</a></p>
+<p>[2]  <a target="_blank" rel="noopener" href="https://blog.csdn.net/ZhanChiFei21580/article/details/125138456">https://blog.csdn.net/ZhanChiFei21580/article/details/125138456</a></p>
+<p>[3]  【从不懂到会用！PID从理论到实践~】 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1B54y1V7hp/?share_source=copy_web&amp;vd_source=90288dac57ff0067016219a4b1b869e2">https://www.bilibili.com/video/BV1B54y1V7hp/?share_source=copy_web&amp;vd_source=90288dac57ff0067016219a4b1b869e2</a></p>
 
                 
             </div>
@@ -567,7 +524,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://cqdong.top/2022/09/07/zi-dong-kong-zhi-yuan-li-1/">http://cqdong.top/2022/09/07/zi-dong-kong-zhi-yuan-li-1/</a>
+                    <a href="http://cqdong.top/2023/03/31/pid-kong-zhi-xue-xi/">http://cqdong.top/2023/03/31/pid-kong-zhi-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -605,8 +562,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/">
-                                    <span class="chip bg-color">-自动控制原理</span>
+                                <a href="/tags/PID/">
+                                    <span class="chip bg-color">-PID</span>
                                 </a>
                             
                         </div>
@@ -780,9 +737,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/03/31/pid-kong-zhi-xue-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="PID控制学习">
+                        
+                        <span class="card-title">PID控制学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Dong-ChaoQun
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PID/">
+                        <span class="chip bg-color">-PID</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/10/03/xiao-si/">
                     <div class="card-image">
@@ -800,9 +804,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -816,51 +820,6 @@
                     
                     <a href="/tags/%E6%80%9D%E8%80%83/">
                         <span class="chip bg-color">-思考</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/09/06/windows-lian-jie-linux-fu-wu-qi-jin-xing-shen-du-xue-xi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="windows连接Linux服务器进行深度学习">
-                        
-                        <span class="card-title">windows连接Linux服务器进行深度学习</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Dong-ChaoQun
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">-深度学习</span>
                     </a>
                     
                 </div>
