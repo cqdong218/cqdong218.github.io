@@ -18,7 +18,7 @@
 
 4.复合控制系统
 
-1.什么是PIDPID，即比例Proportion、积">
+1.什么是PID​    PID，即比例Proport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -382,8 +382,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/PID/">
-                                <span class="chip bg-color">-PID</span>
+                            <a href="/tags/pid/">
+                                <span class="chip bg-color">pid</span>
                             </a>
                         
                     </div>
@@ -440,7 +440,7 @@
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856568.png" alt="双闭环控制"></p>
 <p>4.复合控制系统</p>
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856597.png" alt="复合控制"></p>
-<h2 id="1-什么是PID"><a href="#1-什么是PID" class="headerlink" title="1.什么是PID"></a>1.什么是PID</h2><p>PID，即<strong>比例Proportion</strong>、<strong>积分Integral</strong>和<strong>微分Derivative</strong>三个单词的缩写。本质上是一种负反馈控制，特别适用于过程动态性能良好和性能要求不太高的情况下。小到控制一个元件的温度，大到控制无人机的飞行姿态和飞行速度等等，都可以使用PID控制。</p>
+<h2 id="1-什么是PID"><a href="#1-什么是PID" class="headerlink" title="1.什么是PID"></a>1.什么是PID</h2><p>​    PID，即<strong>比例Proportion</strong>、<strong>积分Integral</strong>和<strong>微分Derivative</strong>三个单词的缩写。本质上是一种负反馈控制，特别适用于过程动态性能良好和性能要求不太高的情况下。小到控制一个元件的温度，大到控制无人机的飞行姿态和飞行速度等等，都可以使用PID控制。</p>
 <p><strong>公式</strong>如下：</p>
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856206.png"></p>
 <p><strong>三个重要的参数</strong>：</p>
@@ -470,7 +470,7 @@
 <p>由于无人机会上升，那么误差就不能一直是1m，下图是实际情况：</p>
 <img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303302230969.png" alt="实际情况" style="zoom:80%;">
 
-<p>误差下降直到 0，紧跟着比例控制的作用为0（或者叫输出为0），但是积分控制并不为0，因为他已经积累原来的误差，就算现在误差为0，它只是不再增加了，而不是变为0，此时他提供升力，这时有几种情况  ①转速大于100rpm，这时会出现超调，②转速等于100rpm，正好误差为0，完美！！！<strong>【不确定，但研究也没啥意义】</strong>但是不可能小于100rpm，因为只要小于100rpm，误差就大于0，还会接着积分加上比例控制进行修正直至误差为0。</p>
+<p>误差下降直到 0，紧跟着比例控制的作用为0（或者叫输出为0），但是积分控制并不为0，因为他已经积累原来的误差，就算现在误差为0，它只是不再增加了，而不是变为0，此时他提供升力，这时有几种情况  ①转速大于100rpm，这时会出现超调，②转速等于100rpm，正好误差为0，此时积分作用提供的升力使其悬停在100m处。完美！！！③转速小于100rpm，只要转速小于100rpm，误差就大于0，还会接着有积分和比例控制进行修正直至误差为0。也就是说，积分Ki太小，未能完美修正误差，需要调大。</p>
 <p>所以说，加入Ki能消除稳态误差。Ki大的话会产生超调，也就是上面①情况，这时要引入微分环节。</p>
 <pre class="line-numbers language-base" data-language="base"><code class="language-base">积分环节的调节作用虽然会消除静态误差，但也会降低系统的响应速度，增加系统的超调量。Ki越小，积分的积累作用越弱，这时系统在过渡时不会产生振荡； 但是Ki减小会减慢静态误差的消除过程，消除偏差所需的时间也较长，但可以减少超调量，提高系统的稳定性。
 
@@ -480,7 +480,7 @@
 
 <h3 id="3、D-微分部分"><a href="#3、D-微分部分" class="headerlink" title="3、D - 微分部分"></a><strong>3、D - 微分部分</strong></h3><p>​    实际的控制系统除了希望消除静态误差外，还要求加快调节过程。在偏差出现的瞬间，或在偏差变化的瞬间， 不但要对偏差量做出立即响应（比例环节的作用），而且要根据偏差的变化趋势预先给出适当的纠正。为了实现这一作用，可在 PI 控制器的基础上加入微分环节，形成 PID 控制器。</p>
 <p><img src="https://cqdong.oss-cn-hangzhou.aliyuncs.com/202303310856719.png"></p>
-<p>此时，PI控制使误差迅速减小，由于微分作用在接近目标值时，起控制作用还是很强，就会出现超调，无人机高度超过100m，引入了微分控制，考虑下一刻时间的误差，要是小于当前误差，求导为负数，相当于给电机一个反向电压，减小其升力，提前阻止其超调，由于是提前控制，加快了调节过程，使动态性能变好。</p>
+<p>此时，PI控制使误差迅速减小，由于积分作用在接近目标值时，其控制作用还是很强，就会出现超调，无人机高度超过100m，引入了微分控制，考虑下一刻时间的误差，要是小于当前误差，求导为负数，相当于给电机一个反向电压，减小其升力，提前阻止其超调，由于是提前控制，加快了调节过程，使动态性能变好。</p>
 <pre class="line-numbers language-base" data-language="base"><code class="language-base">微分环节的作用使阻止偏差的变化。它是根据偏差的变化趋势（变化速度）进行控制。偏差变化的越快，微分控制器的输出就越大，并能在偏差值变大之前进行修正。
 微分作用的引入，将有助于减小超调量，克服振荡，使系统趋于稳定，特别对髙阶系统非常有利，它加快了系统的跟踪速度。但微分的作用对输入信号的噪声很敏感，对那些噪声较大的系统一般不用微分，或在微分起作用之前先对输入信号进行滤波。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -562,8 +562,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/PID/">
-                                    <span class="chip bg-color">-PID</span>
+                                <a href="/tags/pid/">
+                                    <span class="chip bg-color">pid</span>
                                 </a>
                             
                         </div>
@@ -773,8 +773,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PID/">
-                        <span class="chip bg-color">-PID</span>
+                    <a href="/tags/pid/">
+                        <span class="chip bg-color">pid</span>
                     </a>
                     
                 </div>
